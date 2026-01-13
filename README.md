@@ -8,7 +8,7 @@
 **Ankit R V** 🐍  
 **📧** [ankith8804@gmail.com](mailto:ankith8804@gmail.com)  
 **⏰** Jan 14 - Apr 14, 2026 | **15-20h/week** | **30% Equity**  
-**🎓** NITK Electrical Engineering '27  
+**🎓** NITK '27  
 
 [![Django](https://img.shields.io/badge/Django-4.2-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
