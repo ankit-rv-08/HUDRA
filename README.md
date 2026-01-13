@@ -8,7 +8,7 @@
 **Ankit R V** 🐍  
 **📧** [ankith8804@gmail.com](mailto:ankith8804@gmail.com)  
 **⏰** Jan 14 - Apr 14, 2026 | **15-20h/week** | **30% Equity**  
-**🎓** NITK '27  
+**🎓** NITK Electrical Engineering '27  
 
 [![Django](https://img.shields.io/badge/Django-4.2-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
@@ -19,60 +19,70 @@
 
 ---
 
-## 🎯 **Product Overview**
 
-**HUDRA** is a **location-based task marketplace** connecting people needing real-world tasks with local taskers. The platform fully controls:
-
+🎯 Product Overview
+🏠 HUDRA connects people needing real-world tasks with local taskers. Platform fully controls:
 💼 Task Discovery & Matching
-💬 Communication (in-app chat only)
+💬 Communication (in-app chat only)  
 💰 Payments (platform escrow)
-📊 Status Tracking
+📊 Status Lifecycle
 🛡️ Trust & Accountability
 
-**Revenue Model**: Commission on completed tasks[file:1]
 
-### **Supported Categories**
-
-🏠 Moving & Cleaning
-🐕 Pet Care & Event Help
-🔧 Handyman & Errands
-🌱 Gardening & Delivery
-💻 Basic Tech Setup
+💵 Revenue: Commission on completed tasks
 ​
 
+✅ Supported Categories
+
+🏠 Moving & Cleaning        🐕 Pet Care
+🎉 Event Help              🔧 Handyman  
+📦 Errands & Delivery      🌱 Gardening
+💻 Basic Tech Setup[file:1]
+
+
+
+📋 Contract Scope
+13 Weeks - 195 Hours - Production MVP|
+
+| Phase           | Weeks | Hours | Status    | Key Deliverables            |
+| --------------- | ----- | ----- | --------- | --------------------------- |
+| 1️⃣ Foundation  | 1-3   | 52h   | 🟡 Active | GitHub + Task APIs + Deploy |
+| 2️⃣ Marketplace | 4-6   | 52h   | ⬜         | Applications + Location     |
+| 3️⃣ Payments    | 7-9   | 52h   | ⬜         | Razorpay + Chat + Wallet    |
+| 4️⃣ Production  | 10-12 | 30h   | ⬜         | Dashboards + Security       |
+| 5️⃣ Delivery    | 13    | 9h    | ⬜         | Beta + Production Handover  |
+
+🏗️ Production Architecture
+BACKEND: Django REST Framework 4.2 + PostgreSQL 15
+├── 🔐 JWT Auth + Twilio Phone OTP
+├── 💳 Razorpay Escrow Payments  
+├── 💬 Django Channels Chat (Redis)
+├── 📱 Celery Background Jobs
+└── 🗄️ PostgreSQL (Render managed)
+
+FRONTEND: Next.js 14 + Tailwind CSS + HTMX
+├── 📍 Google Maps Places API
+├── 📊 Role-based Dashboards
+└── ⚡ Real-time Updates
+
+DEPLOY: Render + GitHub Actions CI/CD
+
+
+
+📊 Progress Tracking
 text
-
----
-
-## 📋 **Contract Scope** 
-### *13 Weeks • 195 Hours • Production MVP*
-
-| Phase | Weeks | Hours | Status | Deliverables |
-|-------|-------|-------|--------|--------------|
-| **1️⃣ Foundation** | **1-3** | **52h** | 🟡 **Active** | GitHub + Task CRUD + Deploy |
-| 2️⃣ Marketplace | 4-6 | 52h | ⬜ | Applications + Location |
-| 3️⃣ Payments | 7-9 | 52h | ⬜ | Razorpay + Chat + Wallet |
-| 4️⃣ Production | 10-12 | 30h | ⬜ | Dashboards + Verification |
-| **5️⃣ Delivery** | **13** | **9h** | ⬜ | Beta + Handover |
-
----
-
-## 🏗️ **Production Stack**
-
-```mermaid
-graph TB
-    A[Django REST API] --> B[PostgreSQL 15]
-    A --> C[Razorpay Escrow]
-    A --> D[Django Channels]
-    D --> E[Redis 7]
-    F[Next.js 14] --> G[Tailwind + HTMX]
-    F --> H[Google Maps API]
-    I[Render] --> J[Web Service]
-    I --> B
-    I --> E
-
+Total Budget: 195 hours | Weekly: 15h avg
+Phase 1: 0h/52h used (0%) | 0/5 deliverables
+Phase	Planned Hours	Actual Hours	Progress
+Phase 1	52h	0h	0%
+Phase 2	52h	0h	0%
+Phase 3	52h	0h	0%
+Total	195h	0h	0%
 🚀 Quickstart
-Backend
+Backend Setup:
+
+bash
+
 
 git clone https://github.com/ankit-rv-08/HUDRA.git
 cd HUDRA/backend
@@ -81,47 +91,50 @@ pip install -r requirements.txt
 cp .env.example .env
 python manage.py migrate
 python manage.py runserver
+API Access:
 
-🔗 APIs: http://localhost:8000/docs
+text
+📖 Docs: http://localhost:8000/docs
+🔐 Admin: http://localhost:8000/admin
+Frontend (Phase 2+):
 
-Frontend (Phase 2+)
-bash
 cd frontend && npm ci && npm run dev
 
+
 📈 Production KPIs
-| Metric          | Target      | Status |
-| --------------- | ----------- | ------ |
-| API Uptime      | 99.9%       | 🟡     |
-| P95 Response    | <500ms      | 🟡     |
-| Beta Tasks      | 25 paid     | 🟡     |
-| Transaction Vol | ₹15K        | 🟡     |
-| Commission      | ₹2.2K (15%) | 🟡     |
+| Metric          | Target  | Status |
+| --------------- | ------- | ------ |
+| API Uptime      | 99.9%   | 🟡     |
+| Response Time   | <500ms  | 🟡     |
+| Beta Tasks      | 25 paid | 🟡     |
+| Transaction Vol | ₹15K    | 🟡     |
+| Commission      | ₹2.2K   | 🟡     |
+
 
 📁 Repository Structure
 
 📁 HUDRA/
-├── 📁 backend/           # Django DRF API
-│   ├── 📁 core/         # Models & Serializers
-│   ├── 📁 tasks/        # Business Logic
-│   ├── 📁 payments/     # Razorpay Integration
-│   └── 📁 users/        # Auth & Profiles
-├── 📁 frontend/         # Next.js App
-├── 📁 docs/            # API Specifications
-├── 📁 deploy/          # Render Blueprints
-└── 🔄 .github/workflows/ # CI/CD
+├── 📁 backend/          # Django DRF API
+│   ├── 📁 core/        # Models & Serializers
+│   ├── 📁 tasks/       # Business Logic
+│   ├── 📁 payments/    # Razorpay + Wallet
+│   └── 📁 users/       # Auth & Profiles
+├── 📁 frontend/        # Next.js App
+├── 📁 docs/           # API Specifications
+├── 📁 deploy/         # Render Blueprints
+└── .github/workflows/ # CI/CD Pipelines
 
 👨‍💼 Technical Lead
-<div align="center">
 text
 Ankit R V
 📧 ankith8804@gmail.com
-💻 github.com/ankit-rv-08
+🌐 github.com/ankit-rv-08/HUDRA  
 💼 linkedin.com/in/ankit-rv-08
-🏫 NITK Electrical '27
+🎓 NITK Electrical Engineering '27
 ☁️ AWS Solutions Architect Certified
 
-"End-to-end production SaaS development"
-</div>
+Production SaaS Development:
+Architecture → Implementation → Deployment → Scale
 <div align="center">
 📄 Legal
 MIT License © 2026 HUDRA Limited
