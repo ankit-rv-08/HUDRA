@@ -81,7 +81,6 @@ Total	195h	0h	0%
 🚀 Quickstart
 Backend Setup:
 
-bash
 
 
 git clone https://github.com/ankit-rv-08/HUDRA.git
@@ -114,15 +113,16 @@ cd frontend && npm ci && npm run dev
 📁 Repository Structure
 
 📁 HUDRA/
-├── 📁 backend/          # Django DRF API
-│   ├── 📁 core/        # Models & Serializers
-│   ├── 📁 tasks/       # Business Logic
-│   ├── 📁 payments/    # Razorpay + Wallet
-│   └── 📁 users/       # Auth & Profiles
-├── 📁 frontend/        # Next.js App
-├── 📁 docs/           # API Specifications
-├── 📁 deploy/         # Render Blueprints
-└── .github/workflows/ # CI/CD Pipelines
+├── 📁 backend/           # Django DRF API
+│   ├── 📁 core/         # Models & Serializers
+│   ├── 📁 tasks/        # Business Logic
+│   ├── 📁 payments/     # Razorpay Integration
+│   └── 📁 users/        # Auth & Profiles
+├── 📁 frontend/         # Next.js App
+├── 📁 docs/            # API Specifications
+├── 📁 deploy/          # Render Blueprints
+└── 🔄 .github/workflows/ # CI/CD
+
 
 👨‍💼 Technical Lead
 text
