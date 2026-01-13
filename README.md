@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=7F9CF5&center=true&vCenter=true&width=435&lines=HUDRA:+Location-based+TaskMarket;Technical+Lead:+Ankit+R+V;Production+MVP+Apr+14%2C+2026" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=7F9CF5&center=true&vCenter=true&width=435&lines=HUDRA:+Location-based+TaskMarket;Technical+Lead:+Ankith+R+V;Production+MVP+Apr+14%2C+2026" alt="Typing SVG" />
 </div>
 
 <div align="center">
 
 **Technical Lead (Fixed-term Contract)**  
-**Ankit R V** 🐍  
+**Ankith R V** 🐍  
 **📧** [ankith8804@gmail.com](mailto:ankith8804@gmail.com)  
 **⏰** Jan 14 - Apr 14, 2026 | **15-20h/week** | **30% Equity**  
 **🎓** NITK Electrical Engineering '27  
