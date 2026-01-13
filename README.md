@@ -29,10 +29,10 @@
 📊 Status Tracking
 🛡️ Trust & Accountability
 
-
 **Revenue Model**: Commission on completed tasks[file:1]
 
 ### **Supported Categories**
+
 🏠 Moving & Cleaning
 🐕 Pet Care & Event Help
 🔧 Handyman & Errands
@@ -73,7 +73,7 @@ graph TB
 
 🚀 Quickstart
 Backend
-bash
+
 git clone https://github.com/ankit-rv-08/HUDRA.git
 cd HUDRA/backend
 python -m venv venv && source venv/bin/activate
@@ -81,20 +81,24 @@ pip install -r requirements.txt
 cp .env.example .env
 python manage.py migrate
 python manage.py runserver
+
 🔗 APIs: http://localhost:8000/docs
 
 Frontend (Phase 2+)
 bash
 cd frontend && npm ci && npm run dev
+
 📈 Production KPIs
-Metric	Target	Status
-API Uptime	99.9%	🟡
-P95 Response	<500ms	🟡
-Beta Tasks	25 paid	🟡
-Transaction Vol	₹15K	🟡
-Commission	₹2.2K (15%)	🟡
+| Metric          | Target      | Status |
+| --------------- | ----------- | ------ |
+| API Uptime      | 99.9%       | 🟡     |
+| P95 Response    | <500ms      | 🟡     |
+| Beta Tasks      | 25 paid     | 🟡     |
+| Transaction Vol | ₹15K        | 🟡     |
+| Commission      | ₹2.2K (15%) | 🟡     |
+
 📁 Repository Structure
-text
+
 📁 HUDRA/
 ├── 📁 backend/           # Django DRF API
 │   ├── 📁 core/         # Models & Serializers
@@ -105,6 +109,7 @@ text
 ├── 📁 docs/            # API Specifications
 ├── 📁 deploy/          # Render Blueprints
 └── 🔄 .github/workflows/ # CI/CD
+
 👨‍💼 Technical Lead
 <div align="center">
 text
@@ -119,4 +124,4 @@ Ankit R V
 </div>
 <div align="center">
 📄 Legal
-MIT License © 2026 HUDRA Limited[file:1]
+MIT License © 2026 HUDRA Limited
