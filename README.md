@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=7F9CF5&center=true&vCenter=true&width=435&lines=HUDRA:+Location-based+Task+Marketplace;Technical+Lead:+Ankit+R+V;Production+MVP+Apr+14%2C+2026" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=7F9CF5&center=true&vCenter=true&width=435&lines=HUDRA:+Location-based+TaskMarket;Technical+Lead:+Ankit+R+V;Production+MVP+Apr+14%2C+2026" alt="Typing SVG" />
 </div>
 
 <div align="center">
@@ -52,13 +52,19 @@
 | 4️⃣ Production  | 10-12 | 30h   | ⬜         | Dashboards + Security       |
 | 5️⃣ Delivery    | 13    | 9h    | ⬜         | Beta + Production Handover  |
 
-🏗️ Production Architecture
-BACKEND: Django REST Framework 4.2 + PostgreSQL 15
-├── 🔐 JWT Auth + Twilio Phone OTP
-├── 💳 Razorpay Escrow Payments  
-├── 💬 Django Channels Chat (Redis)
-├── 📱 Celery Background Jobs
-└── 🗄️ PostgreSQL (Render managed)
+## 🏗️ **Production Stack**
+
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| **Backend** | Django REST 4.2 | Core APIs + Business Logic |
+| **Database** | PostgreSQL 15 | Tasks + Users + Transactions |
+| **Payments** | Razorpay | Escrow (Pay→Hold→Release) |
+| **Real-time** | Django Channels | In-app Chat |
+| **Frontend** | Next.js 14 | PC-optimized Dashboards |
+| **Deploy** | Render | Production Hosting |
+
+**No syntax errors, renders perfectly on GitHub.**
+
 
 FRONTEND: Next.js 14 + Tailwind CSS + HTMX
 ├── 📍 Google Maps Places API
