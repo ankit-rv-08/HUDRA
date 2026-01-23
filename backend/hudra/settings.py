@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",'rest_framework',  # Add if missing
+    "django.contrib.staticfiles",'rest_framework','rest_framework_simplejwt', # Add if missing
     'drf_spectacular', # Add if missing  
     'hudra_tasks',     # ← ADD THIS
     'hudra_users',
@@ -124,3 +124,18 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# REST_FRAMEWORK + JWT
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+from datetime import timedelta
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
+
+# Add to INSTALLED_APPS (if missing):
+# 'rest_framework_simplejwt',
