@@ -1,61 +1,53 @@
-import React, { useEffect, useState } from "react";
-
-const API_URL = process.env.REACT_APP_API_URL;
+import React, { useState, useEffect } from "react";
+import API_URL from "./api";
+import "./App.css";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [title, setTitle] = useState("");
+  const [taskTitle, setTaskTitle] = useState("");
 
-  // Fetch tasks from Django API
   useEffect(() => {
     fetch(`${API_URL}/api/tasks`)
-      .then((response) => response.json())
-      .then((data) => setTasks(data))
-      .catch((error) => console.error("Error fetching tasks:", error));
+      .then(res => res.json())
+      .then(data => setTasks(data));
   }, []);
 
-  // Create new task
-  const createTask = () => {
+  const addTask = () => {
     fetch(`${API_URL}/api/tasks`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify({ title: title }),
+      body: JSON.stringify({ title: taskTitle })
     })
-      .then((response) => response.json())
-      .then((data) => {
-        setTasks([...tasks, data]);
-        setTitle("");
-      })
-      .catch((error) => console.error("Error creating task:", error));
+      .then(res => res.json())
+      .then(newTask => {
+        setTasks([...tasks, newTask]);
+        setTaskTitle("");
+      });
   };
 
   return (
-    <div style={{ padding: "40px", fontFamily: "Arial" }}>
+    <div className="container">
       <h1>HUDRA Task Manager</h1>
 
-      {/* Input to create task */}
-      <input
-        type="text"
-        placeholder="Enter task"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        style={{ padding: "10px", marginRight: "10px" }}
-      />
+      <div className="task-input">
+        <input
+          type="text"
+          placeholder="Enter task..."
+          value={taskTitle}
+          onChange={(e) => setTaskTitle(e.target.value)}
+        />
+        <button onClick={addTask}>Add Task</button>
+      </div>
 
-      <button onClick={createTask} style={{ padding: "10px" }}>
-        Add Task
-      </button>
-
-      {/* Task list */}
-      <h2 style={{ marginTop: "30px" }}>Tasks</h2>
-
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>{task.title}</li>
+      <div className="task-list">
+        {tasks.map(task => (
+          <div key={task.id} className="task-card">
+            {task.title}
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
