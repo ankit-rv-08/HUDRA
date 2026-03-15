@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-j2y8)d+(job_^r37+(w5h#ypv!baokhv9-&8hdezk!+#hr*_&p"
 
 DEBUG = True
-ALLOWED_HOSTS = ['*', 'hudra.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['*', 'hudra-ktvt.onrender.com', 'localhost']
 
 # STRIPE KEYS ← NEW
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
