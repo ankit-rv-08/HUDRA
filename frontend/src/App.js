@@ -13,23 +13,25 @@ function App() {
   }, []);
 
   const addTask = () => {
-    fetch(`${API_URL}/api/tasks`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ title: taskTitle })
-    })
-      .then(res => res.json())
-      .then(newTask => {
-        setTasks([...tasks, newTask]);
-        setTaskTitle("");
-      });
-  };
+  fetch(`${API_URL}/api/tasks`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ title: taskTitle })
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    setTasks([...tasks, data]);
+    setTaskTitle("");
+  })
+  .catch(err => console.error(err));
+};
 
   return (
     <div className="container">
-      <h1>HUDRA Task Manager</h1>
+      <h1>HUDRA Task Marketplace</h1>
 
       <div className="task-input">
         <input
