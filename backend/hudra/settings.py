@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-j2y8)d+(job_^r37+(w5h#ypv!baokhv9-&8hdezk!+#hr*_&p"
 
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'hudra.onrender.com', 'localhost']
 
 # STRIPE KEYS ← NEW
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
@@ -121,3 +121,4 @@ SIMPLE_JWT = {
 }
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+CORS_ALLOW_ALL_ORIGINS = True
