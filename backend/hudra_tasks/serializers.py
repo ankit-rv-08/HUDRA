@@ -5,4 +5,12 @@ class TaskSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Task
-        fields = "__all__"
+        fields = [
+            "id",
+            "title",
+            "location",
+            "budget",
+            "is_completed",
+            "is_paid",
+            "created_at"
+        ]
