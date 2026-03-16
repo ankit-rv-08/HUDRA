@@ -12,6 +12,7 @@ function App() {
     fetch(`${API_URL}/api/tasks/`)
       .then(res => res.json())
       .then(data => {
+        console.log("API DATA:", data);
         if (Array.isArray(data)) {
           setTasks(data);
         } else {
@@ -83,6 +84,7 @@ function App() {
         />
 
         <input
+          type="number"
           placeholder="Budget"
           value={budget}
           onChange={e => setBudget(e.target.value)}
