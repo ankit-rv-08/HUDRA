@@ -44,7 +44,6 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -52,9 +51,11 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://cuddly-happiness-7vpx69pgv4wg2pgvw-3000.app.github.dev",
+    "https://hudra.vercel.app",
     "http://localhost:3000",
 ]
+CORS_ALLOW_ALL_ORIGINS = True
+
 ROOT_URLCONF = "hudra.urls"
 
 TEMPLATES = [
@@ -123,4 +124,3 @@ SIMPLE_JWT = {
 }
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-CORS_ALLOW_ALL_ORIGINS = True
