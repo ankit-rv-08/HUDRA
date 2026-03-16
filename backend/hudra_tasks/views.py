@@ -21,10 +21,8 @@ class TaskViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=request.data) 
         serializer.is_valid(raise_exception=True)       
         
-        if request.user.is_authenticated:   
-            serializer.save(created_by=request.user)
-        else:
-            serializer.save()
+        user = request.user if request.user.is_authenticated else None
+        serializer.save(created_by=user)
 
         return Response(serializer.data)
 
