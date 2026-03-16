@@ -40,10 +40,14 @@ function App() {
       body: JSON.stringify({
         title: title,
         location: location,
-        budget: budget
+        budget: Number (budget)
       })
     })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error("Server error");
+        return res.json();
+      }) 
+      
       .then(data => {
         setTasks([...tasks, data]);
         setTitle("");
