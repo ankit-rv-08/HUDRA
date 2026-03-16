@@ -17,12 +17,16 @@ class TaskViewSet(viewsets.ModelViewSet):
         serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
 
-    def create(self, request):
-        serializer = TaskSerializer(data=request.data)
-        if serializer.is_valid():
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data) 
+        serializer.is_valid(raise_exception=True)       
+        
+        if request.user.is_authenticated:   
             serializer.save(created_by=request.user)
-            return Response(serializer.data)
-        return Response(serializer.errors)
+        else:
+            serializer.save()
+
+        return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
         task = Task.objects.get(pk=pk)
