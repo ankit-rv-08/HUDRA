@@ -1,157 +1,163 @@
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=7F9CF5&center=true&vCenter=true&width=435&lines=HUDRA:+Location-based+TaskMarket;Technical+Lead:+Ankith+R+V;Production+MVP+Apr+14%2C+2026" alt="Typing SVG" />
-</div>
+# 🚀 HUDRA — Professional Task Marketplace
 
 <div align="center">
 
-**Technical Lead (Fixed-term Contract)**  
-**Ankith R V** 🐍  
-**📧** [ankith8804@gmail.com](mailto:ankith8804@gmail.com)  
-**⏰** Jan 14 - Apr 14, 2026 | **15-20h/week** | **30% Equity**  
-**🎓** NITK '27  
+### ⚡ Secure • Escrow-Based • Real-Time Task Economy
 
-[![Django](https://img.shields.io/badge/Django-4.2-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Render](https://img.shields.io/badge/Render-Deploy-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://render.com/)
+![Typing SVG](https://readme-typing-svg.herokuapp.com?size=22&center=true&vCenter=true&width=800&lines=Task+Marketplace+with+Escrow+Payments;Real-time+Collaboration+System;Django+%2B+Next.js+Fullstack+SaaS;Built+for+Trust+and+Speed)
 
 </div>
 
 ---
 
+## 🟢 SYSTEM STATUS (SIMULATED LIVE)
 
-🎯 Product Overview
-🏠 HUDRA connects people needing real-world tasks with local taskers. Platform fully controls:
-💼 Task Discovery & Matching
-💬 Communication (in-app chat only)  
-💰 Payments (platform escrow)
-📊 Status Lifecycle
-🛡️ Trust & Accountability
+- 🟢 API STATUS        → ONLINE
+- 🟢 DATABASE          → CONNECTED (PostgreSQL)
+- 🟡 WALLET SYSTEM     → IN DEVELOPMENT
+- 🟢 TASK ENGINE       → ACTIVE
+- 🟢 FRONTEND          → LIVE (Next.js)
+- 🟡 MESSAGING         → IN PROGRESS
 
+---
 
-💵 Revenue: Commission on completed tasks
-​
+## ⚙️ CORE ARCHITECTURE
 
-✅ Supported Categories
+- Frontend → Next.js 14 ⚡
+- Backend → Django REST 🔥
+- Database → PostgreSQL 🧠
+- Payments → Razorpay 💰
+- Realtime → Django Channels 💬
+- Deploy → Render + GitHub Actions 🚀
 
-🏠 Moving & Cleaning        🐕 Pet Care
-🎉 Event Help              🔧 Handyman  
-📦 Errands & Delivery      🌱 Gardening
-💻 Basic Tech Setup[file:1]
+---
 
+## 🧠 WHAT HUDRA DOES
 
+HUDRA is a real-world task economy platform:
 
-📋 Contract Scope
-13 Weeks - 195 Hours - Production MVP|
+- 📌 Post Tasks
+- 🧑‍🔧 Hire Taskers
+- 💬 Real-time Chat
+- 💰 Escrow Payments
+- ⭐ Trust-Based Ratings
 
-| Phase           | Weeks | Hours | Status    | Key Deliverables            |
-| --------------- | ----- | ----- | --------- | --------------------------- |
-| 1️⃣ Foundation  | 1-3   | 52h   | 🟡 Active | GitHub + Task APIs + Deploy |
-| 2️⃣ Marketplace | 4-6   | 52h   | ⬜         | Applications + Location     |
-| 3️⃣ Payments    | 7-9   | 52h   | ⬜         | Razorpay + Chat + Wallet    |
-| 4️⃣ Production  | 10-12 | 30h   | ⬜         | Dashboards + Security       |
-| 5️⃣ Delivery    | 13    | 9h    | ⬜         | Beta + Production Handover  |
-
-## 🏗️ **Production Stack**
-
-| Layer | Technology | Purpose |
-|-------|------------|---------|
-| **Backend** | Django REST 4.2 | Core APIs + Business Logic |
-| **Database** | PostgreSQL 15 | Tasks + Users + Transactions |
-| **Payments** | Razorpay | Escrow (Pay→Hold→Release) |
-| **Real-time** | Django Channels | In-app Chat |
-| **Frontend** | Next.js 14 | PC-optimized Dashboards |
-| **Deploy** | Render | Production Hosting |
-
-**No syntax errors, renders perfectly on GitHub.**
+---
 
 
-FRONTEND: Next.js 14 + Tailwind CSS + HTMX
-├── 📍 Google Maps Places API
-├── 📊 Role-based Dashboards
-└── ⚡ Real-time Updates
+# 🔄 TASK LIFECYCLE
 
-DEPLOY: Render + GitHub Actions CI/CD
+OPEN → APPLIED → ASSIGNED → IN_PROGRESS → COMPLETED → PAID
 
+---
 
+💰 ESCROW WALLET FLOW
+User Adds Money
+↓
+Funds Locked 🔒
+↓
+Task Assigned
+↓
+Task Completed
+↓
+Lister Approves
+↓
+Funds Released 💸
 
-📊 Progress Tracking
-text
-Total Budget: 195 hours | Weekly: 15h avg
-Phase 1: 0h/52h used (0%) | 0/5 deliverables
-Phase	Planned Hours	Actual Hours	Progress
-Phase 1	52h	0h	0%
-Phase 2	52h	0h	0%
-Phase 3	52h	0h	0%
-Total	195h	0h	0%
-🚀 Quickstart
-Backend Setup:
+---
 
-## 📊 **Progress Update: Jan 14, 1:30 AM IST**
+📁 PROJECT STRUCTURE
 
-| Phase | Status | Commit |
-|-------|--------|---------|
-| **Phase 1** | 🟢 **GitHub LIVE** | `abc1234` |
-| Backend Init | ⏳ **Django loading** | - |
-| Task APIs | ⬜ Planned | - |
-| Deployment | ⬜ Planned | - |
+HUDRA/
+│
+├── backend/
+│   ├── core/
+│   ├── tasks/
+│   ├── users/
+│   ├── payments/
+│
+├── frontend/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
+│
+├── docs/
+├── deploy/
+└── README.md
 
-**Burn Rate**: 2h/52h (Phase 1) | **On track**
+---
 
+🚀 LIVE DEVELOPMENT PIPELINE
 
+Code → Commit → GitHub → CI/CD → Render → Production 
 
-git clone https://github.com/ankit-rv-08/HUDRA.git
-cd HUDRA/backend
-python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-python manage.py migrate
-python manage.py runserver
-API Access:
+---
 
-text
-📖 Docs: http://localhost:8000/docs
-🔐 Admin: http://localhost:8000/admin
-Frontend (Phase 2+):
+📊 SYSTEM METRICS
 
-cd frontend && npm ci && npm run dev
+API Uptime → 99.9%
 
+Task Engine → Active
 
-📈 Production KPIs
-| Metric          | Target  | Status |
-| --------------- | ------- | ------ |
-| API Uptime      | 99.9%   | 🟡     |
-| Response Time   | <500ms  | 🟡     |
-| Beta Tasks      | 25 paid | 🟡     |
-| Transaction Vol | ₹15K    | 🟡     |
-| Commission      | ₹2.2K   | 🟡     |
+Wallet System → In Progress
 
+Build Status → Passing
 
-📁 Repository Structure
+---
 
-📁 HUDRA/
-├── 📁 backend/           # Django DRF API
-│   ├── 📁 core/         # Models & Serializers
-│   ├── 📁 tasks/        # Business Logic
-│   ├── 📁 payments/     # Razorpay Integration
-│   └── 📁 users/        # Auth & Profiles
-├── 📁 frontend/         # Next.js App
-├── 📁 docs/            # API Specifications
-├── 📁 deploy/          # Render Blueprints
-└── 🔄 .github/workflows/ # CI/CD
+🧠 DESIGN PRINCIPLES
 
+Trust-first architecture 🔐
 
-👨‍💼 Technical Lead
-text
-Ankit R V
-📧 ankith8804@gmail.com
-🌐 github.com/ankit-rv-08/HUDRA  
-💼 linkedin.com/in/ankit-rv-08
-🎓 NITK Electrical Engineering '27
-☁️ AWS Solutions Architect Certified
+Escrow-based safety 💰
 
-Production SaaS Development:
-Architecture → Implementation → Deployment → Scale
+Fast task execution ⚡
+
+Minimal friction UX 🎯
+
+SaaS-grade system design 🧱
+
+---
+
+📈 BUSINESS MODEL
+
+Commission per completed task
+
+Platform fee on transactions
+
+Future: premium verified taskers
+
+---
+
+# 👨‍💼 ORGANIZATION
+
+**HUDRA — RHC Creations**
+
+📧 Email: rhcreations.enquires@gmail.com  
+📍 Address: Tampines Avenue 5, Singapore 52138  
+
+📞 Contact:
+- +65 9169 7853
+- +91 8073 975238
+
+---
+
+👨‍💼 AUTHOR
+
+**Technical Lead:** Ankith R V  
+🎓 NITK '27  
+💻 Full-Stack Developer | SaaS Builder | System Architect
+📧 Email: ankith8804@gmail.com  
+🔗 LinkedIn: https://www.linkedin.com/in/ankit-rv-44892b2a9  
+
+---
+
+⚡ SYSTEM QUOTE
+
+“A marketplace where trust is enforced by architecture, not promises.”
+
+---
+
 <div align="center">
-📄 Legal
-MIT License © 2026 HUDRA Limited
+🚀 HUDRA — BUILDING THE REAL-WORLD TASK ECONOMY
+</div> ```
