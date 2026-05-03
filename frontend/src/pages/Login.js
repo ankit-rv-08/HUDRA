@@ -15,7 +15,7 @@ export default function Login() {
     setError('');
     try {
       await login(form.username, form.password);
-      navigate('/browse');
+      navigate('/home');
     } catch {
       setError('Invalid username or password');
     } finally {
@@ -23,49 +23,37 @@ export default function Login() {
     }
   };
 
+  const inp = "w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-sm outline-none focus:border-[#6366f1] focus:ring-2 focus:ring-[#6366f1]/10";
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0f172a] px-4">
-      <div className="bg-[#1e293b] rounded-2xl p-8 w-full max-w-md border border-[#334155]">
-        <h1 className="text-2xl font-bold text-white mb-1">Welcome back</h1>
-        <p className="text-slate-400 text-sm mb-6">Log in to your HUDRA account</p>
-
-        {error && <div className="bg-red-500/10 text-red-400 text-sm px-4 py-2 rounded-lg mb-4">{error}</div>}
-
+    <div className="min-h-screen bg-[#f0f4f8] flex items-center justify-center px-4">
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 w-full max-w-md">
+        <div className="flex items-center gap-2 mb-6">
+          <div className="w-8 h-8 bg-[#1a1f2e] rounded-lg flex items-center justify-center text-white font-bold text-sm">H</div>
+          <span className="font-bold text-[#1a1f2e]">HUDRA</span>
+        </div>
+        <h1 className="text-2xl font-bold text-[#1a1f2e] mb-1">Welcome back</h1>
+        <p className="text-gray-500 text-sm mb-6">Log in to your HUDRA account</p>
+        {error && <div className="bg-red-50 text-red-600 text-sm px-4 py-2 rounded-xl mb-4 border border-red-100">{error}</div>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-sm text-slate-400 mb-1 block">Username</label>
-            <input
-              type="text"
-              value={form.username}
-              onChange={e => setForm({...form, username: e.target.value})}
-              className="w-full bg-[#0f172a] border border-[#334155] rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#1DB954]"
-              placeholder="your_username"
-              required
-            />
+            <label className="text-sm font-medium text-gray-700 mb-1.5 block">Username</label>
+            <input type="text" className={inp} placeholder="your_username" value={form.username}
+              onChange={e => setForm({...form, username: e.target.value})} required />
           </div>
           <div>
-            <label className="text-sm text-slate-400 mb-1 block">Password</label>
-            <input
-              type="password"
-              value={form.password}
-              onChange={e => setForm({...form, password: e.target.value})}
-              className="w-full bg-[#0f172a] border border-[#334155] rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#1DB954]"
-              placeholder="••••••••"
-              required
-            />
+            <label className="text-sm font-medium text-gray-700 mb-1.5 block">Password</label>
+            <input type="password" className={inp} placeholder="••••••••" value={form.password}
+              onChange={e => setForm({...form, password: e.target.value})} required autoComplete="current-password" />
           </div>
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-[#1DB954] text-black font-semibold py-2.5 rounded-lg hover:bg-green-400 transition disabled:opacity-50"
-          >
+          <button type="submit" disabled={loading}
+            className="w-full bg-[#6366f1] text-white font-semibold py-3 rounded-xl hover:bg-[#5558e3] transition disabled:opacity-50">
             {loading ? 'Logging in...' : 'Log in'}
           </button>
         </form>
-
-        <p className="text-center text-slate-400 text-sm mt-6">
+        <p className="text-center text-gray-500 text-sm mt-6">
           Don't have an account?{' '}
-          <Link to="/register" className="text-[#1DB954] hover:underline">Sign up</Link>
+          <Link to="/register" className="text-[#6366f1] hover:underline font-medium">Sign up</Link>
         </p>
       </div>
     </div>
