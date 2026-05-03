@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import BrowseTasks from './pages/BrowseTasks';
 import PostTask from './pages/PostTask';
 import TaskDetail from './pages/TaskDetail';
+import Payment from './pages/Payment';
 import Wallet from './pages/Wallet';
 import Messages from './pages/Messages';
 import Chat from './pages/Chat';
@@ -31,6 +32,7 @@ function AppRoutes() {
         <Route path="/browse" element={<BrowseTasks />} />
         <Route path="/tasks/:id" element={<TaskDetail />} />
         <Route path="/post-task" element={<ProtectedRoute><PostTask /></ProtectedRoute>} />
+        <Route path="/payment/:id" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
         <Route path="/wallet" element={<ProtectedRoute><Wallet /></ProtectedRoute>} />
         <Route path="/messages" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
         <Route path="/chat/:id" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
