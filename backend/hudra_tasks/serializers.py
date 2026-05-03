@@ -15,7 +15,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
         fields = ['id', 'task', 'applicant', 'proposal', 'price', 'estimated_hours', 'status', 'created_at']
-        read_only_fields = ['applicant', 'status']
+        read_only_fields = ['applicant', 'status', 'task']
 
 
 class TaskSerializer(serializers.ModelSerializer):
@@ -41,7 +41,7 @@ class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
         fields = ['id', 'task', 'sender', 'content', 'created_at']
-        read_only_fields = ['sender']
+        read_only_fields = ['sender', 'task']
 
 
 class TransactionSerializer(serializers.ModelSerializer):
@@ -65,7 +65,7 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = ['id', 'task', 'reviewer', 'reviewee', 'rating', 'comment', 'created_at']
-        read_only_fields = ['reviewer']
+        read_only_fields = ['reviewer', 'task']
 
 
 class DisputeSerializer(serializers.ModelSerializer):
@@ -74,4 +74,4 @@ class DisputeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dispute
         fields = ['id', 'task', 'reported_by', 'reason', 'status', 'admin_note', 'created_at']
-        read_only_fields = ['reported_by', 'status', 'admin_note']
+        read_only_fields = ['reported_by', 'status', 'admin_note', 'task']
