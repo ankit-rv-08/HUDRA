@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({
-  baseURL: 'https://cuddly-happiness-7vpx69pgv4wg2pgvw-8000.app.github.dev',
-});
+const BASE = process.env.REACT_APP_API_URL || 'https://hudra-ktvt.onrender.com';
+
+const API = axios.create({ baseURL: BASE });
 
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('access');
@@ -19,10 +19,7 @@ API.interceptors.response.use(
       const refresh = localStorage.getItem('refresh');
       if (refresh) {
         try {
-          const { data } = await axios.post(
-            'https://cuddly-happiness-7vpx69pgv4wg2pgvw-8000.app.github.dev/auth/token/refresh/',
-            { refresh }
-          );
+          const { data } = await axios.post(`${BASE}/auth/token/refresh/`, { refresh });
           localStorage.setItem('access', data.access);
           original.headers.Authorization = `Bearer ${data.access}`;
           return API(original);
