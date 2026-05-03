@@ -127,20 +127,10 @@ def create_payment_intent(request, pk):
     if task.status != 'appointed':
         return Response({'error': 'Task must be appointed before payment'}, status=400)
 
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    amount_cents = int(task.budget * 100)
-
-    intent = stripe.PaymentIntent.create(
-        amount=amount_cents,
-        currency='sgd',
-        metadata={'task_id': task.id, 'user_id': request.user.id}
-    )
-
-    task.stripe_payment_intent = intent['id']
     task.status = 'payment_confirmed'
     task.save()
 
-    return Response({'client_secret': intent['client_secret']})
+    return Response({'message': 'Payment confirmed', 'status': task.status})
 
 
 @api_view(['POST'])
