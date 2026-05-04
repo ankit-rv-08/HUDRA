@@ -2,136 +2,203 @@
 
 <div align="center">
 
+<img src="frontend/public/logo.jpeg" alt="HUDRA Logo" width="120"/>
+
 ### ⚡ Secure • Escrow-Based • Real-Time Task Economy
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com?size=22&center=true&vCenter=true&width=800&lines=Task+Marketplace+with+Escrow+Payments;Real-time+Collaboration+System;Django+%2B+Next.js+Fullstack+SaaS;Built+for+Trust+and+Speed)
+![Typing SVG](https://readme-typing-svg.herokuapp.com?size=22&center=true&vCenter=true&width=900&lines=Escrow-Based+Task+Marketplace;Stripe+Powered+Payments;Real-time+Task+Collaboration;Fullstack+Django+%2B+React+SaaS;Built+for+Trust%2C+Speed+%26+Scale)
 
 </div>
 
 ---
-
-## 🟢 SYSTEM STATUS (SIMULATED LIVE)
+## 🟢 SYSTEM STATUS (LIVE)
 
 - 🟢 API STATUS        → ONLINE
 - 🟢 DATABASE          → CONNECTED (PostgreSQL)
-- 🟡 WALLET SYSTEM     → IN DEVELOPMENT
+- 🟢 WALLET SYSTEM     → ACTIVE (Escrow + Balance Tracking)
 - 🟢 TASK ENGINE       → ACTIVE
-- 🟢 FRONTEND          → LIVE (Next.js)
-- 🟡 MESSAGING         → IN PROGRESS
+- 🟢 FRONTEND          → LIVE (React)
+- 🟢 PAYMENTS          → LIVE (Stripe Integration)
+- 🟢 DASHBOARDS        → ACTIVE (Lister + Tasker)
+- 🟢 REVIEWS SYSTEM    → ACTIVE
+- 🟢 DISPUTES SYSTEM   → ACTIVE
+- 🟡 REALTIME CHAT     → PARTIAL (Polling → WebSockets upgrade pending)
 
 ---
 
 ## ⚙️ CORE ARCHITECTURE
 
-- Frontend → Next.js 14 ⚡
-- Backend → Django REST 🔥
-- Database → PostgreSQL 🧠
-- Payments → Razorpay 💰
-- Realtime → Django Channels 💬
-- Deploy → Render + GitHub Actions 🚀
+- **Frontend** → React (Vite) ⚡
+- **Backend** → Django REST Framework 🔥
+- **Database** → PostgreSQL 🧠
+- **Payments** → Stripe (Card Payments + Intent Flow) 💳
+- **Auth** → Token-based Authentication 🔐
+- **Realtime (Planned)** → Django Channels 💬
+- **Deploy** → Render + GitHub Actions 🚀
 
 ---
 
 ## 🧠 WHAT HUDRA DOES
 
-HUDRA is a real-world task economy platform:
+HUDRA is a **real-world task execution marketplace** where:
 
-- 📌 Post Tasks
-- 🧑‍🔧 Hire Taskers
-- 💬 Real-time Chat
-- 💰 Escrow Payments
-- ⭐ Trust-Based Ratings
-
----
-
-
-# 🔄 TASK LIFECYCLE
-
-OPEN → APPLIED → ASSIGNED → IN_PROGRESS → COMPLETED → PAID
+- 📌 Users post tasks with budgets
+- 🧑‍🔧 Taskers apply to complete them
+- 🤝 Listers appoint a tasker
+- 💰 Payments are secured via escrow
+- ✅ Funds are released only after completion
+- ⭐ Users build trust via ratings & reviews
 
 ---
 
-💰 ESCROW WALLET FLOW
-User Adds Money
+## 🔄 TASK LIFECYCLE
+
+OPEN → APPLIED → APPOINTED → PAYMENT_LOCKED → IN_PROGRESS → COMPLETED → PAID
+
+---
+
+## 💰 ESCROW WALLET FLOW (LIVE SYSTEM)
+  
+User Pays via Stripe
 ↓
-Funds Locked 🔒
+Payment Intent Created
+↓
+Funds Held (Escrow Layer)
 ↓
 Task Assigned
 ↓
 Task Completed
 ↓
-Lister Approves
+Lister Confirms
 ↓
-Funds Released 💸
+Funds Released to Tasker Wallet 💸
+↓
+Platform Fee Deducted (10%)
+
 
 ---
 
-📁 PROJECT STRUCTURE
+## 💳 PAYMENT SYSTEM (STRIPE)
+
+- ✅ Secure Card Payments (Stripe Elements)
+- ✅ Payment Intent Flow (Backend Controlled)
+- ✅ Client Secret Handling
+- ✅ Payment Confirmation Sync
+- 🟡 Webhooks (Recommended Next Upgrade)
+
+---
+
+## 📊 KEY FEATURES (LIVE)
+
+### 🧾 TASK SYSTEM
+- Create / Browse / Filter Tasks
+- Apply to Tasks
+- Appoint Taskers
+- Task Status Management
+
+### 💬 MESSAGING
+- Task-based private chat
+- PII filtering (emails/phones blocked)
+
+### 💰 WALLET SYSTEM
+- Balance tracking
+- Lifetime earnings
+- Transaction logs
+- Withdraw simulation
+
+### 📈 DASHBOARDS
+- **Lister Dashboard**
+  - Active tasks
+  - Completed tasks
+- **Tasker Dashboard**
+  - Applications
+  - Assigned tasks
+  - Earnings
+  - Ratings
+
+### ⭐ TRUST SYSTEM
+- Reviews & Ratings
+- Average rating calculation
+
+### ⚠️ DISPUTES
+- Task-level dispute reporting system
+
+---
+
+## 📁 PROJECT STRUCTURE
 
 HUDRA/
 │
 ├── backend/
-│   ├── core/
-│   ├── tasks/
-│   ├── users/
-│   ├── payments/
+│ ├── core/
+│ ├── hudra_tasks/
+│ ├── users/
+│ ├── payments/
 │
 ├── frontend/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
+│ ├── components/
+│ ├── pages/
+│ ├── api/
+│ ├── context/
 │
 ├── docs/
 ├── deploy/
 └── README.md
 
----
-
-🚀 LIVE DEVELOPMENT PIPELINE
-
-Code → Commit → GitHub → CI/CD → Render → Production 
 
 ---
 
-📊 SYSTEM METRICS
+## 🚀 LIVE DEVELOPMENT PIPELINE
+Code → Commit → GitHub → CI/CD → Render → Production
 
-API Uptime → 99.9%
-
-Task Engine → Active
-
-Wallet System → In Progress
-
-Build Status → Passing
 
 ---
 
-🧠 DESIGN PRINCIPLES
+## 📊 SYSTEM METRICS
 
-Trust-first architecture 🔐
-
-Escrow-based safety 💰
-
-Fast task execution ⚡
-
-Minimal friction UX 🎯
-
-SaaS-grade system design 🧱
+- ⚡ API Uptime → 99.9%
+- 🔥 Task Engine → Active
+- 💰 Payments → Live
+- 📦 Build Status → Passing
+- 📈 System Stability → High
 
 ---
 
-📈 BUSINESS MODEL
+## 🧠 DESIGN PRINCIPLES
 
-Commission per completed task
-
-Platform fee on transactions
-
-Future: premium verified taskers
+- 🔐 Trust-first architecture
+- 💰 Escrow-based safety
+- ⚡ Fast task execution
+- 🎯 Minimal friction UX
+- 🧱 Scalable SaaS structure
 
 ---
 
-# 👨‍💼 ORGANIZATION
+## 📈 BUSINESS MODEL
 
-**HUDRA — RHC Creations**
+- 💸 10% commission per completed task
+- 💳 Platform fee via escrow system
+- 🔜 Future:
+  - Verified taskers
+  - Priority listings
+  - Subscription tiers
+
+---
+
+## 🧠 FUTURE ROADMAP
+
+- 🔄 Real-time chat (WebSockets)
+- 🔐 Stripe Webhooks (true payment verification)
+- 📱 Mobile app (React Native)
+- 🤖 AI task matching
+- 🌍 Multi-country currency support
+- 🧾 Automated payouts (Stripe Connect)
+
+---
+
+## 👨‍💼 ORGANIZATION
+
+**HUDRA — TECHNOLOGIES**
 
 📧 Email: rhcreations.enquires@gmail.com  
 📍 Address: Tampines Avenue 5, Singapore 52138  
@@ -142,22 +209,25 @@ Future: premium verified taskers
 
 ---
 
-👨‍💼 AUTHOR
+## 👨‍💻 AUTHOR
 
 **Technical Lead:** Ankith R V  
 🎓 NITK '27  
-💻 Full-Stack Developer | SaaS Builder | System Architect
+💻 Full-Stack Developer | SaaS Builder | System Architect  
+
 📧 Email: ankith8804@gmail.com  
 🔗 LinkedIn: https://www.linkedin.com/in/ankit-rv-44892b2a9  
 
 ---
 
-⚡ SYSTEM QUOTE
+## ⚡ SYSTEM QUOTE
 
-“A marketplace where trust is enforced by architecture, not promises.”
+> “A marketplace where trust is enforced by architecture, not promises.”
 
 ---
 
 <div align="center">
-🚀 HUDRA — BUILDING THE REAL-WORLD TASK ECONOMY
-</div> ```
+
+🚀 **HUDRA — BUILDING THE REAL-WORLD TASK ECONOMY**
+
+</div>
