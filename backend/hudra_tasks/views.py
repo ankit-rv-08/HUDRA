@@ -14,15 +14,12 @@ from .serializers import (
 )
 
 PII_PATTERN = re.compile(
-    r'(\+?\d[\d\s\-]{7,}\d'
-    r'|[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)',
+    r'(\+?\d[\d\s\-]{7,}\d|[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)',
     re.IGNORECASE
 )
 
-
 def clean_message(content):
     return PII_PATTERN.sub('[blocked]', content)
-
 
 # ─── TASKS ────────────────────────────────────────────────────────────────────
 
@@ -127,6 +124,32 @@ def create_payment_intent(request, pk):
     if task.status != 'appointed':
         return Response({'error': 'Task must be appointed before payment'}, status=400)
 
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    amount_cents = int(float(task.budget) * 100)
+
+    intent = stripe.PaymentIntent.create(
+        amount=amount_cents,
+        currency='sgd',
+        metadata={'task_id': task.id, 'user_id': request.user.id}
+    )
+
+    task.stripe_payment_intent = intent['id']
+    task.save()
+
+    return Response({'client_secret': intent['client_secret']})
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def confirm_payment(request, pk):
+    try:
+        task = Task.objects.get(pk=pk)
+    except Task.DoesNotExist:
+        return Response({'error': 'Task not found'}, status=404)
+
+    if task.created_by != request.user:
+        return Response({'error': 'Only the lister can confirm payment'}, status=403)
+
     task.status = 'payment_confirmed'
     task.save()
 
@@ -148,7 +171,7 @@ def complete_task(request, pk):
         return Response({'error': 'Task must be in progress to complete'}, status=400)
 
     commission_rate = 0.10
-    payout = task.budget * (1 - commission_rate)
+    payout = float(task.budget) * (1 - commission_rate)
 
     with db_transaction.atomic():
         task.status = 'completed'
